@@ -3,8 +3,9 @@ import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-// console.log(`${__dirname}/**/*.entity{.js,.ts}`);
+// console.log(`${__dirname}/**/**/*.entity{.js,.ts}`);
 // console.log(`${__dirname}/../src/**/*.entity{.js,.ts}`);
+// console.log(`${__dirname}/migration/{.ts,*.js}`);
 
 @Module({
   imports: [
@@ -19,8 +20,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: parseInt(process.env.DB_PORT),
       // autoLoadEntities: true,
       type: 'postgres',
-      synchronize: true,
-      entities: [`${__dirname}/**/*.entity{.js,.ts}`],
+      entities: [`${__dirname}/**/**/*.entity{.js,.ts}`],
+      migrations: [`${__dirname}/migration/{.ts,*.js}`],
+      migrationsRun: true,
     }),
     UserModule,
   ],
