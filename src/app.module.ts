@@ -10,6 +10,8 @@ import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
+import { CategoryModule } from './category/category.module';
+import { ProductModule } from './product/product.module';
 
 // console.log(`${__dirname}/**/**/*.entity{.js,.ts}`);
 // console.log(`${__dirname}/../src/**/*.entity{.js,.ts}`);
@@ -39,6 +41,8 @@ import { JwtModule } from '@nestjs/jwt';
     CacheModule,
     AuthModule,
     JwtModule,
+    CategoryModule,
+    ProductModule,
   ],
   controllers: [],
   providers: [
