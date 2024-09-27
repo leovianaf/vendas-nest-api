@@ -12,7 +12,6 @@ import { Roles } from '../decorators/roles.decorator';
 import { UserType } from '../user/enum/user-type.enum';
 import { CategoryEntity } from './entities/category.entity';
 import { CreateCategoryDto } from './dtos/create-category.dto';
-import { find } from 'rxjs';
 
 @Roles(UserType.Admin, UserType.User)
 @Controller('category')
@@ -26,7 +25,7 @@ export class CategoryController {
     );
   }
 
-  @Roles(UserType.Admin, UserType.User)
+  @Roles(UserType.Admin)
   @UsePipes(ValidationPipe)
   @Post()
   async createCategory(
